@@ -1,12 +1,15 @@
 import useFetchProducts from "../hooks/useFetchProducts";
+import ProductCard from "./ProductCard";
 
 const ProductsList = () => {
-  const { data, loading, error } = useFetchProducts(
-    "https://fakestoreapi.com/products"
-  );
+  const {
+    data: products, //cambio el nombre por facilidad no es obligatorio cambiarlo
+    loading,
+    error,
+  } = useFetchProducts("https://fakestoreapi.com/products");
 
   if (loading) {
-    return <div>cargando productos..</div>;
+    return <div>Cargando productos...</div>;
   }
 
   if (error) {
